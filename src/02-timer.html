@@ -12,22 +12,22 @@
     <input type="text" id="datetime-picker" />
     <button type="button" data-start>Start</button>
 
-    <div class="timer">
+    <div class="timer" style="display: flex; gap: 10;">
       <div class="field">
-        <span class="value" data-days>00</span>
-        <span class="label">Days</span>
+        <span class="value" data-days style="display: block; text-align: center;">00</span>
+        <span class="label" style="display: block;">Days</span>
+      </div>
+      <div class="field" >
+        <span class="value" data-hours style="display: block; text-align: center;">00</span>
+        <span class="label" style="display: block;">Hours</span>
+      </div>
+      <div class="field" >
+        <span class="value" data-minutes style="display: block; text-align: center;">00</span>
+        <span class="label" style="display: block;">Minutes</span>
       </div>
       <div class="field">
-        <span class="value" data-hours>00</span>
-        <span class="label">Hours</span>
-      </div>
-      <div class="field">
-        <span class="value" data-minutes>00</span>
-        <span class="label">Minutes</span>
-      </div>
-      <div class="field">
-        <span class="value" data-seconds>00</span>
-        <span class="label">Seconds</span>
+        <span class="value" data-seconds style="display: block; text-align: center;">00</span>
+        <span class="label" style="display: block;">Seconds</span>
       </div>
     </div>
 
