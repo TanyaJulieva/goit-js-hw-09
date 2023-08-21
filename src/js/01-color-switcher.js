@@ -8,7 +8,6 @@ elements.startBtn.addEventListener('click', handlerStartClick);
 elements.stopBtn.addEventListener('click', handlerStopClick);
 
 elements.stopBtn.disabled = true;
-console.log(elements.startBtn)
 
 let changeColorId = null
 
