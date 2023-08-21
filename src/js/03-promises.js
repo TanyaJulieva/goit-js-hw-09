@@ -7,7 +7,6 @@ step: document.querySelector('[name="step"]'),
 amount: document.querySelector('[name="amount"]'),
 button: document.querySelector('[type="submit"]'),
 };
-
 elements.form.addEventListener('submit', handlerSubmit);
 
 function handlerSubmit(evt) {

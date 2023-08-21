@@ -14,7 +14,6 @@ const elements = {
 let intervalId;
 const currentDate = new Date().getTime();
 
-
 elements.button.disabled = true;
 
 const options = {
@@ -45,20 +44,28 @@ function handlerClick() {
   if (intervalId) {
     clearInterval(intervalId);
   }
+  elements.button.disabled = true;
+  elements.input.disabled = true;
   let targetDate = new Date(elements.input.value).getTime();
   let ms = targetDate - currentDate;
 
   intervalId = setInterval(() => {
+    elements.button.disabled = true;
+    elements.input.disabled = true;
     ms -= 1000;
     elements.seconds.textContent = addLeadingZero(convertMs(ms).seconds);
     elements.minutes.textContent = addLeadingZero(convertMs(ms).minutes);
     elements.hours.textContent = addLeadingZero(convertMs(ms).hours);
     elements.days.textContent = addLeadingZero(convertMs(ms).days);
-  }, 1000);
 
-  if(ms === 0) {
-    clearInterval(intervalId);
-  }
+    if(ms <= 0) {
+      clearInterval(intervalId);
+      elements.seconds.textContent = '00';
+    elements.minutes.textContent = '00';
+    elements.hours.textContent = '00';
+    elements.days.textContent = '00';
+    }
+  }, 1000);
 };
 
 function convertMs(ms) {
