@@ -8,7 +8,7 @@ amount: document.querySelector('[name="amount"]'),
 button: document.querySelector('[type="submit"]'),
 };
 
-elements.button.addEventListener('submit', handlerSubmit);
+elements.form.addEventListener('submit', handlerSubmit);
 
 function handlerSubmit(evt) {
   evt.preventDefault();
@@ -34,14 +34,14 @@ function createPromise(position, delay) {
         rej({ position, delay });
       };
     }, delay);
-
-    promise
+  });
+  
+  promise
   .then(({ position, delay }) => {
     Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
   .catch(({ position, delay }) => {
     Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-  });
   });
 };
 
