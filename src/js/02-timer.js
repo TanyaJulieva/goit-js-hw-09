@@ -58,15 +58,16 @@ function handlerClick() {
     elements.hours.textContent = addLeadingZero(convertMs(ms).hours);
     elements.days.textContent = addLeadingZero(convertMs(ms).days);
 
-    if(ms <= 0) {
+    if (ms <= 0) {
       clearInterval(intervalId);
       elements.seconds.textContent = '00';
-    elements.minutes.textContent = '00';
-    elements.hours.textContent = '00';
-    elements.days.textContent = '00';
+      elements.minutes.textContent = '00';
+      elements.hours.textContent = '00';
+      elements.days.textContent = '00';
+    elements.input.disabled = false;
     }
   }, 1000);
-};
+}
 
 function convertMs(ms) {
   const second = 1000;
